@@ -1,0 +1,19 @@
+{
+    "name":"psecio/uri",
+    "type":"library",
+    "description":"A secure URI generation and validation library",
+    "keywords":["uri", "generate", "validate"],
+    "homepage":"https://github.com/psecio/uri.git",
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Chris Cornutt",
+            "email":"ccornutt@phpdeveloper.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Psecio\\Uri\\": "/"
+        }
+    }
+}
