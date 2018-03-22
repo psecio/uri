@@ -98,7 +98,7 @@ class Builder
         return $data;
     }
 
-    public function validate($url)
+    public function verify($url)
     {
         $uri = parse_url($url);
 

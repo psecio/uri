@@ -44,7 +44,7 @@ The other half of the equation is the verification of a URL. The library provide
 <?php
 $url = 'http://test.com?foo=this+is+a+test&signature=90b7ac10b261213f71faaf8ce4008fdbdd037bab7192041de8d54d93a158467f';
 
-$valid = $uri->validate($url);
+$valid = $uri->verify($url);
 echo 'Is it valid? '.var_export($valid, true)."\n"; // boolean response
 
 ?>

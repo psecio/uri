@@ -145,7 +145,7 @@ class BuilderTest extends \PHPUnit\Framework\TestCase
         $b = new Builder('test');
         
         $result = $b->create($base, $data);
-        $this->assertTrue($b->validate($result));
+        $this->assertTrue($b->verify($result));
     }
 
     public function testValidateInvalidSignedUrl()
@@ -160,7 +160,7 @@ class BuilderTest extends \PHPUnit\Framework\TestCase
         $result = $b->create($base, $data);
         $result = preg_replace('/signature=[0-9a-z]+/', 'signature=1234', $result);
 
-        $this->assertFalse($b->validate($result));
+        $this->assertFalse($b->verify($result));
     }
 
     /**
@@ -171,7 +171,7 @@ class BuilderTest extends \PHPUnit\Framework\TestCase
         $url = 'http://test.com';
         $b = new Builder('test');
 
-        $b->validate($url);
+        $b->verify($url);
     }
 
     /**
@@ -182,7 +182,7 @@ class BuilderTest extends \PHPUnit\Framework\TestCase
         $url = 'http://test.com?foo=bar';
         $b = new Builder('test');
 
-        $b->validate($url);
+        $b->verify($url);
     }
 
     /**
@@ -193,7 +193,6 @@ class BuilderTest extends \PHPUnit\Framework\TestCase
         $url = 'http://test.com?foo=bar&signature=1234&expires='.strtotime('-1 hour');
         $b = new Builder('test');
 
-        $result = $b->validate($url);
-        var_export($result);
+        $b->verify($url);
     }
 }
