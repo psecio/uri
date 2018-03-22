@@ -5,6 +5,16 @@ A common attack method that pentesters and actual attackers will use is to captu
 
 This signature value is built using the contents of the current URL along with a "secret" value unique to the application. This signature is then appended to the URL and can be used directly in links. When the URL is used and the request is received, the signature is then checked against the current URL values. If there's no match, the check fails.
 
+### Installation
+
+Installing via [Composer](https://getcomposer.org) is simple:
+
+```
+composer require psecio/uri
+```
+
+This package only has one dependency, PHPUnit, and that's only a development dependency.
+
 ### Signing URLs
 
 ```php
