@@ -1,7 +1,7 @@
 
 ## Psecio\Uri
 
-A common attack method that pentesters and actual attackers will use is to capture a URL with "id" values in it (like `/user/1234/view` where `1234` is an ID) and manually change this value to try to bypass authorization checks. While an application should always have some kind of auth check when the URL is called, there's another step that can help to prevent URL changes: a signature value.
+A common attack method that pentesters and actual attackers will use is to capture a URL with "id" values in it (like `/user/view?id=1234` where `1234` is an ID) and manually change this value to try to bypass authorization checks. While an application should always have some kind of auth check when the URL is called, there's another step that can help to prevent URL changes: a signature value.
 
 This signature value is built using the contents of the current URL along with a "secret" value unique to the application. This signature is then appended to the URL and can be used directly in links. When the URL is used and the request is received, the signature is then checked against the current URL values. If there's no match, the check fails.
 
