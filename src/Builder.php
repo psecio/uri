@@ -126,7 +126,7 @@ class Builder
         }
 
         $check = $this->buildHash($uri['query']);
-        return ($check === $signature);
+        return hash_equals($check, $signature);
     }
 
     public function buildHash($queryString)
